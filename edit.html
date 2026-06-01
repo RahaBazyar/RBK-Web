@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ویرایش نمونه‌کارها</title>
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        textarea {
+            width: 100%;
+            height: 300px;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            direction: ltr;
+        }
+        .btn-group {
+            margin-top: 15px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .save-btn {
+            background: #28a745;
+            color: white;
+        }
+        .save-btn:hover {
+            background: #218838;
+        }
+        .back-btn {
+            background: #6c757d;
+            color: white;
+        }
+        .back-btn:hover {
+            background: #5a6268;
+        }
+        .note {
+            background: #fff3cd;
+            color: #856404;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        .error-msg {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>ویرایش فایل data.json</h2>
+    
+    <div class="note">
+        ⚠️ توجه: پس از ویرایش، دکمه «دانلود و جایگزینی» را بزنید و فایل دانلود شده را در هاست خود جایگزین فایل `data.json` کنید.
+    </div>
+
+    <textarea id="jsonEditor" placeholder="در حال بارگذاری..."></textarea>
+    <p class="error-msg" id="errorMsg"></p>
+
+    <div class="btn-group">
+        <button class="save-btn" onclick="saveAndDownload()">دانلود و جایگزینی</button>
+        <button class="back-btn" onclick="window.location.href='index.html'">بازگشت به سایت</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const editor = document.getElementById('jsonEditor');
+        const errorMsg = document.getElementById('errorMsg');
+
+        fetch('data.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('فایل data.json پیدا نشد یا خطا در سرور (کد: ' + response.status + ')');
+                }
+                return response.text(); // اول متن رو می‌گیریم
+            })
+            .then(text => {
+                try {
+                    // چک می‌کنیم متن JSON معتبر باشه
+                    const data = JSON.parse(text);
+                    // اگر درست بود، فرمتش رو مرتب می‌کنیم
+                    const formattedJson = JSON.stringify(data, null, 2);
+                    editor.value = formattedJson;
+                    console.log('JSON با موفقیت لود شد!');
+                } catch (e) {
+                    throw new Error('فرمت JSON اشتباه است: ' + e.message);
+                }
+            })
+            .catch(error => {
+                console.error('خطا:', error);
+                editor.value = '';
+                errorMsg.textContent = 'خطا: ' + error.message;
+                errorMsg.style.display = 'block';
+            });
+    });
+
+    function saveAndDownload() {
+        const jsonContent = document.getElementById('jsonEditor').value;
+        
+        if (!jsonContent.trim()) {
+            alert('فایل خالی است! لطفاً ابتدا اطلاعات را بارگذاری کنید.');
+            return;
+        }
+
+        try {
+            JSON.parse(jsonContent); // دوباره چک می‌کنیم
+            
+            const blob = new Blob([jsonContent], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'data.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            alert('فایل با موفقیت دانلود شد!');
+        } catch (e) {
+            alert('خطا: متن وارد شده JSON معتبر نیست. لطفاً ساختار را بررسی کنید.\n' + e.message);
+        }
+    }
+</script>
+
+</body>
+</html>

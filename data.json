@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "وبسایت فروشگاه کوهیار الکتریک",
+    "image": "pictures/koohiar 4.png",
+    "link": "https://koohyarelectric.ir/"
+  },
+  {
+    "id": 2,
+    "title": "فروشگاه انلاین اکسسوری",
+    "image": "pictures/coming soon.jpg",
+    "link": "https://example.com/site2"
+  },
+  {
+    "id": 3,
+    "title": "وبلاگ تخصصی گردشگری",
+    "image": "pictures/coming soon.jpg",
+    "link": "https://example.com/site3"
+  },
+  {
+    "id": 4,
+    "title": "وبسایت تخصصی املاک",
+    "image": "pictures/coming soon.jpg",
+    "link": "https://example.com/site4"
+  }
+]
