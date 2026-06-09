@@ -49,7 +49,7 @@ body {
   color: #d7c3c8;
 }
 .hero-section {
-  background-color: #ffffff; /* یا هر رنگ پس‌زمینه‌ای که دوست داری */
+  background-color: #ffffff; 
   padding: 60px 0;
   width: 100%;
   display: flex;
@@ -63,8 +63,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row-reverse; /* لوگو راست، متن چپ */
-  gap: 50px; /* فاصله بین متن و لوگو */
+  flex-direction: row-reverse; 
+  gap: 50px; 
 }
 
 .hero-image-section {
@@ -73,15 +73,15 @@ body {
 }
 
 .rbk-logo {
-  max-width: 350px; /* اندازه دلخواه برای لوگو */
+  max-width: 350px; 
   height: auto;
-  display: block; /* برای حذف فضای اضافی زیر عکس */
-  margin: 0 auto; /* برای وسط چین شدن در صورت نیاز */
+  display: block;
+  margin: 0 auto; 
 }
 
 .hero-text-section {
   flex: 1;
-  text-align: right; /* چون زبان فارسی است */
+  text-align: right; 
 }
 
 .hero-text-section h1 {
@@ -101,7 +101,7 @@ body {
 .hero-buttons {
   display: flex;
   gap: 15px;
-  flex-direction: row-reverse; /* دکمه‌ها در راست */
+  flex-direction: row-reverse;
 }
 
 .btn {
@@ -114,7 +114,7 @@ body {
 }
 
 .primary-btn {
-  background-color: #3A2F33; /* رنگ هدر */
+  background-color: #3A2F33; 
   color: #ffffff;
   border: 2px solid #3A2F33;
 }
@@ -136,25 +136,25 @@ body {
   color: #ffffff;
 }
 
-/* برای ریسپانسیو شدن در موبایل */
+
 @media (max-width: 768px) {
   .hero-container {
-    flex-direction: column-reverse; /* لوگو زیر متن در موبایل */
+    flex-direction: column-reverse; 
     text-align: center;
   }
 
   .hero-image-section {
     margin-bottom: 30px;
-    flex: none; /* برای اینکه اندازه عرض کامل بگیره */
+    flex: none;
   }
 
   .rbk-logo {
-    max-width: 200px; /* کوچکتر کردن لوگو در موبایل */
+    max-width: 200px; 
   }
 
   .hero-text-section {
     text-align: center;
-    flex: none; /* برای اینکه اندازه عرض کامل بگیره */
+    flex: none; 
   }
   
   .hero-text-section h1 {
@@ -162,17 +162,17 @@ body {
   }
 
   .hero-buttons {
-    flex-direction: column; /* دکمه‌ها زیر هم در موبایل */
+    flex-direction: column;
     align-items: center;
   }
 
   .btn {
-    width: 80%; /* دکمه‌ها عرض بیشتری بگیرن */
+    width: 80%; 
   }
 }
 .services-section {
   padding: 80px 0;
-  background-color: #f8f8f8; /* یک پس‌زمینه ملایم */
+  background-color: #f8f8f8; 
   text-align: center;
 }
 
@@ -192,7 +192,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  flex-wrap: wrap; /* اجازه میده آیتم‌ها در صورت کمبود جا به خط بعدی بروند */
+  flex-wrap: wrap; 
   gap: 30px;
 }
 
@@ -200,30 +200,30 @@ body {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  width: 30%; /* هر باکس حدود یک سوم عرض را بگیرد */
-  overflow: hidden; /* برای اینکه گوشه‌های گرد کار کنند */
+  width: 30%; 
+  overflow: hidden; 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
-  flex-direction: column; /* محتوا عمودی در باکس */
+  flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-bottom: 20px; /* فضای پایین باکس */
+  padding-bottom: 20px;
 }
 
 .service-box:hover {
-  transform: translateY(-10px); /* جلوه بالا رفتن در هاور */
+  transform: translateY(-10px); 
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .service-image img {
   width: 100%;
-  height: 200px; /* ارتفاع ثابت برای تصاویر */
-  object-fit: cover; /* تصویر طوری تنظیم شود که کل فضا را بپوشاند */
+  height: 200px; 
+  object-fit: cover; 
 }
 
 .service-content {
   padding: 20px;
-  flex-grow: 1; /* برای اینکه متن فضای باقی‌مانده را پر کند */
+  flex-grow: 1;
 }
 
 .service-content h3 {
@@ -238,23 +238,23 @@ body {
   line-height: 1.7;
 }
 
-/* برای ریسپانسیو شدن در موبایل */
+
 @media (max-width: 768px) {
   .services-header h2 {
     font-size: 2rem;
   }
   .services-container {
-    flex-direction: column; /* باکس‌ها زیر هم */
+    flex-direction: column; 
     align-items: center;
   }
   .service-box {
-    width: 85%; /* عرض بیشتری در موبایل */
+    width: 85%; 
     margin-bottom: 20px;
   }
 }
 .portfolio-section {
   padding: 80px 0;
-  background-color: #f8f8f8; /* پس‌زمینه ملایم */
+  background-color: #f8f8f8; 
   text-align: center;
 }
 
@@ -272,30 +272,30 @@ body {
   width: min(1200px, 90%);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* دو ستون مساوی */
-  gap: 40px; /* فاصله بین باکس‌ها */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px; 
 }
 
 .portfolio-item {
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 8px 25px rgba(87, 6, 21, 0.2); /* سایه با رنگ مورد نظر */
+  box-shadow: 0 8px 25px rgba(87, 6, 21, 0.2); 
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
-  flex-direction: column; /* محتوا عمودی */
+  flex-direction: column; 
 }
 
 .portfolio-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(87, 6, 21, 0.3); /* سایه پررنگ‌تر در هاور */
+  box-shadow: 0 15px 35px rgba(87, 6, 21, 0.3); 
 }
 
 .portfolio-item img {
   width: 100%;
-  height: 250px; /* ارتفاع ثابت برای تصاویر */
-  object-fit: cover; /* پوشش کامل فضا */
-  display: block; /* حذف فضای اضافی زیر عکس */
+  height: 250px; 
+  object-fit: cover; 
+  display: block; 
 }
 
 .portfolio-details {
@@ -304,7 +304,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-grow: 1; /* برای اینکه فضای باقی‌مانده را بگیرد */
+  flex-grow: 1; 
 }
 
 .portfolio-details p {
@@ -316,7 +316,7 @@ body {
 }
 
 .view-btn {
-  background-color: #570615; /* رنگ سایه */
+  background-color: #570615; 
   color: #ffffff;
   padding: 10px 20px;
   border-radius: 5px;
@@ -326,24 +326,24 @@ body {
 }
 
 .view-btn:hover {
-  background-color: #3A2F33; /* رنگ هدر */
+  background-color: #3A2F33; 
 }
 
-/* ریسپانسیو برای موبایل */
+
 @media (max-width: 768px) {
   .portfolio-header h2 {
     font-size: 2rem;
   }
   .portfolio-grid {
-    grid-template-columns: 1fr; /* یک ستون در موبایل */
+    grid-template-columns: 1fr; 
     gap: 30px;
   }
   .portfolio-item {
-    width: 85%; /* عرض بیشتر */
-    margin: 0 auto; /* وسط چین */
+    width: 85%;
+    margin: 0 auto;
   }
   .portfolio-item img {
-    height: 200px; /* کمی کوچکتر در موبایل */
+    height: 200px;
   }
   .portfolio-details p {
     font-size: 0.95rem;
@@ -353,37 +353,36 @@ body {
   }
 }
 .cta-section {
-  /* background-color: #570615; */ /* این خط کامنت میشه */
-  background: linear-gradient(to left, #570615, #3A2F33); /* گرادیانت از راست به چپ */
+  background: linear-gradient(to left, #570615, #3A2F33); 
   padding: 60px 0;
   width: 100%;
   text-align: center;
 }
 
-/* ... (بقیه کد CSS بدون تغییر) ... */
+
 .cta-content h2 {
   font-size: 2rem;
-  color: #ffffff; /* رنگ سفید برای نوشته */
+  color: #ffffff;
   font-weight: 700;
   line-height: 1.5;
-  letter-spacing: 0.5px; /* کمی فاصله بین حروف برای خوانایی بهتر */
+  letter-spacing: 0.5px; 
 }
 
-/* ریسپانسیو برای موبایل */
+
 @media (max-width: 768px) {
   .cta-content h2 {
-    font-size: 1.5rem; /* کوچکتر کردن فونت در موبایل */
+    font-size: 1.5rem; 
   }
   .cta-section {
     padding: 40px 0;
   }
-  /* برای اطمینان از اینکه گرادیانت در موبایل هم درست دیده شود */
+ 
   .cta-section {
      background: linear-gradient(to left, #570615, #3A2F33); 
   }
 }
 footer {
-  background-color: #3A2F33; /* رنگ تیره مثل هدر */
+  background-color: #3A2F33; 
   color: #ffffff;
   padding: 50px 0;
   width: 100%;
@@ -394,7 +393,7 @@ footer {
   width: min(1200px, 90%);
   margin: 0 auto;
   display: flex;
-  flex-direction: column; /* محتواها زیر هم */
+  flex-direction: column; 
   align-items: center;
   gap: 30px;
 }
@@ -418,21 +417,21 @@ footer {
 }
 
 .contact-info strong {
-  color: #d7c3c8; /* رنگ کمی روشن‌تر برای برچسب‌ها */
+  color: #d7c3c8; 
 }
 
 .footer-copyright {
-  border-top: 1px solid rgba(255, 255, 255, 0.2); /* خط جداکننده */
+  border-top: 1px solid rgba(255, 255, 255, 0.2); 
   padding-top: 25px;
   width: 100%;
 }
 
 .footer-copyright p {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7); /* رنگ کمی کمرنگ‌تر برای کپی‌رایت */
+  color: rgba(255, 255, 255, 0.7);
 }
 
-/* ریسپانسیو برای موبایل */
+
 @media (max-width: 768px) {
   footer {
     padding: 30px 0;
@@ -445,6 +444,5 @@ footer {
   }
 }
 #hero, #services, #portfolio, #contact {
-    scroll-margin-top: 80px; /* این عدد رو با ارتفاع هدر تنظیم کن */
-}
+    scroll-margin-top: 80px;
 
