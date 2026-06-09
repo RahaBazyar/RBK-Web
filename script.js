@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // json data loading
+    
     fetch('data.json')
         .then(response => {
             if (!response.ok) {
