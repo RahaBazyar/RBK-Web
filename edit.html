@@ -101,13 +101,11 @@
                 if (!response.ok) {
                     throw new Error('فایل data.json پیدا نشد یا خطا در سرور (کد: ' + response.status + ')');
                 }
-                return response.text(); // اول متن رو می‌گیریم
+                return response.text();
             })
             .then(text => {
                 try {
-                    // چک می‌کنیم متن JSON معتبر باشه
                     const data = JSON.parse(text);
-                    // اگر درست بود، فرمتش رو مرتب می‌کنیم
                     const formattedJson = JSON.stringify(data, null, 2);
                     editor.value = formattedJson;
                     console.log('JSON با موفقیت لود شد!');
@@ -132,7 +130,7 @@
         }
 
         try {
-            JSON.parse(jsonContent); // دوباره چک می‌کنیم
+            JSON.parse(jsonContent); 
             
             const blob = new Blob([jsonContent], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
